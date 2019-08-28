@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _puts - Function that modify the string color
+ * _printstring - Function that modify the string color
  * @color: String.
  * Return: Nothing.
  */
