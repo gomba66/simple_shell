@@ -1,4 +1,16 @@
 #include "holberton.h"
+void salto(int x);
+/**
+ * salto - Function that detect Ctr + C and print a new line
+ * @x: nothing.
+ * Return: nothing.
+ */
+void salto(int x)
+{
+	(void)x;
+	_printstring("\x1B[32m\n$ \x1B[0m");
+}
+
 /**
  * main - Entry point
  * @ac: argument counter
@@ -17,6 +29,7 @@ int main(int ac, char *av[], char *envp[])
 	int end = 0;
 	(void)ac;
 
+
 	signal(SIGINT, salto);
 
 	string = _searchpath(envp);
@@ -34,7 +47,7 @@ int main(int ac, char *av[], char *envp[])
 		{
 			b = _strtok(a);
 			c = _concat(a, tokenpath);
-			_execv(b, count, c, av);
+			_execv(b, c, av);
 		}
 
 	}
