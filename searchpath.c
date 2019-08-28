@@ -18,10 +18,10 @@ char *_searchpath(char **envi)
 		comp = _strcmp(string, string2, 4);
 		if (comp == 0)
 		{
-			return envi[i];
+			return (envi[i]);
 		}
 		i++;
 	}
 	perror("No path found");
-	return NULL;
+	return (NULL);
 }
