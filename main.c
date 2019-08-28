@@ -4,13 +4,24 @@
  * This is a Super Simple Shell
  * Return: 0 on success.
  */
-int main()
+int main(int ac, char *av[], char *envp[])
 {
+	(void)ac;
+	(void)av;
 	char *a = NULL;
 	char **b = NULL;
+	char *string = NULL;
+	char **tokenpath = NULL;
 	int i, count = 0;
 
 	signal(SIGINT, SIG_IGN);
+
+	string = _searchpath(envp);
+	if (string == NULL)
+	{
+		perror("Path not found");
+	}
+	tokenpath = _tokpath(string);
 
 	while(1)
 	{
@@ -19,7 +30,7 @@ int main()
 		if (a != NULL)
 		{
 			b = _strtok(a);
-			_execv(b, count);
+			_execv(b, count, tokenpath);
 		}
 	}
 	return (0);
