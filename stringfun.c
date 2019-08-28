@@ -55,12 +55,3 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	return (dest);
 }
-/**
- * salto - Function that detect Ctr + C and print a new line
- * Return: nothing.
- */
-
-void salto(void)
-{
-	_printstring("\x1B[32m\n$ \x1B[0m");
-}
