@@ -8,7 +8,7 @@
 #include <signal.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-void salto();
+void salto(void);
 char *_prompt(char **envp);
 void _printchar(char c);
 void _printstring(char *color);
