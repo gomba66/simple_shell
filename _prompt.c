@@ -29,7 +29,8 @@ char *_prompt(char **envp)
 	{
 		while (envp[i])
 		{
-			printf("%s\n", envp[i]);
+			_printstring(envp[i]);
+			_printstring("\n");
 			i++;
 		}
 		b = NULL;
@@ -39,7 +40,7 @@ char *_prompt(char **envp)
 	if (b[0] == 'e' && b[1] == 'x' && b[2] == 'i' && b[3] == 't' && b[4] == '\n')
 	{
 		free(b);
-		exit(98);
+		exit(0);
 	}
 
 	return (b);
