@@ -7,9 +7,11 @@
  * @token: string tokenized
  * Return: not return on success, otherwise return -1 if fail.
  */
-void _execv(char **token, int count)
+void _execv(char **token, int count, char **tokenpath)
 {
 	pid_t pid_child;
+	int i = 0;
+
 
 	pid_child = fork();
 
@@ -20,6 +22,13 @@ void _execv(char **token, int count)
 	}
 	if (!pid_child)
 	{
+		//printf("%s", string);
+		while (tokenpath[i] != NULL)
+		{
+			printf("%s\n",tokenpath[i]);
+			i++;
+		}
+
 		if (execv(token[0], token) == -1)
 		{
 			perror(token[0]);
