@@ -1,21 +1,26 @@
 #include "holberton.h"
-#include <errno.h>
-#include <stdlib.h>
-#include <stdio.h>
 /**
  * _execv - Function to execute a program
  * @token: string tokenized
  * @count: counter
  * @tokpath: path tokenized
+ * @av: string that contain the name of the program.
  * Return: not return on success, otherwise return -1 if fail.
  */
-void _execv(char **token, int count, char **tokpath)
+void _execv(char **token, int count, char **tokpath, char **av)
 {
 	pid_t pid_child = 0;
-	int j = 0;
-	(void)count;
-	pid_child = fork();
+	int j = 0, newcount = 0, x = 2;
+	char *namefile;
 
+	for (x = 2, newcount = 0; av[0][x] != '\0'; x++, newcount++)
+		;
+	namefile = malloc(sizeof(char) * newcount);
+	for (x = 2, j = 0; av[0][x] != '\0'; x++, j++)
+		namefile[j] = av[0][x];
+	namefile[j] = '\0';
+	j = 0;
+	pid_child = fork();
 	if (pid_child < 0)
 	{
 		perror("Error fork");
@@ -25,7 +30,7 @@ void _execv(char **token, int count, char **tokpath)
 	{
 		if (token[0][0] == '/')
 		{
-			if (execve(token[0], token, NULL) == -1)
+			if (execve(token[0], token, tokpath) == -1)
 			{
 				perror(token[0]);
 				exit(1);
@@ -34,14 +39,10 @@ void _execv(char **token, int count, char **tokpath)
 		else
 		{
 			while (access(tokpath[j], X_OK | F_OK) < 0 && tokpath[j])
-			{
 				j++;
-			}
-			if (execve(tokpath[j], token, NULL) == -1)
-			{
+			if (execve(tokpath[j], token, tokpath) == -1)
 				perror(token[0]);
-				exit(1);
-			}
+			exit(1);
 		}
 	}
 	else
