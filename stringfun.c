@@ -1,11 +1,10 @@
 #include"holberton.h"
-
-/**                                                                                 
- * _strcmp - compare two strings                                                    
- * @s1: string 1                                                                    
- * @s2: string 2                                                                    
- * @bytes: number of bytes                                                          
- * Return: the difference                                                           
+/**
+ * _strcmp - compare two strings
+ * @s1: string 1
+ * @s2: string 2
+ * @bytes: number of bytes
+ * Return: the difference
  */
 int _strcmp(char *s1, char *s2, size_t bytes)
 {
@@ -14,23 +13,21 @@ int _strcmp(char *s1, char *s2, size_t bytes)
         if (s1 == NULL || s2 == NULL)
                 return(-1);
 
-        for (i = 0; s1[i] && s2[i] == s1[i] && i < bytes - 1; i++)
-                ;
+        for (i = 0; s1[i] && s2[i] == s1[i] && i < bytes - 1; i++);
         return (s2[i] - s1[i]);
 }
 
-/**                                                                                 
- * _strlen - get lenght of string                                                   
- * @str: string to measure                                                          
- * Return: lenght                                                                   
+/**
+ * _strlen - get lenght of string
+ * @str: string to measure
+ * Return: lenght
  */
 int _strlen(const char *str)
 {
 
         int i;
 
-        for (i = 0; str[i] != '\0'; i++)
-                ;
+        for (i = 0; str[i] != '\0'; i++);
         return (i);
 }
 
@@ -47,37 +44,11 @@ char *_strncat(char *dest, char *src, int n)
 	int i, j;
 
 	i = 0;
-	for (j = 0; dest[j] != '\0'; j++)
-		;
+	for (j = 0; dest[j] != '\0'; j++);
 	while (src[i] != '\0' && i < n)
 	{
 		dest[j + i] = src[i];
 		i++;
-	}
-	return (dest);
-}
-
-/**
- * _strcat - concatenates two strings
- * @dest: destination
- * @src: source
- *
- * Return: pointer to the resulting string
- */
-char *_strcat(char *dest, char *src)
-{
-	int i = 0, j = 0;
-
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
 	}
 	return (dest);
 }
