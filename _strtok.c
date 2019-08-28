@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * _strtok - Function that tokenize the string
- * @string: Is the string that join from main
+ * @buffer: Is the string that join from main
  * Return: An array of pointers
  */
 char **_strtok(char *buffer)
@@ -12,7 +12,7 @@ char **_strtok(char *buffer)
 	char *delim = " \n";
 	int sizebuf = 1024;
 
-	newArray = malloc(sizeof(char*) * sizebuf);
+	newArray = malloc(sizeof(char *) * sizebuf);
 
 	token = strtok(buffer, delim);
 
