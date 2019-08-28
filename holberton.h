@@ -6,7 +6,9 @@
 #include <string.h>
 #include <errno.h>
 #include <signal.h>
-char *_prompt();
+#include <sys/types.h>
+#include <sys/wait.h>
+char *_prompt(char **envp);
 void _printchar(char c);
 void _printstring(char *color);
 char **_strtok(char *buffer);
