@@ -8,13 +8,14 @@
  */
 int _strcmp(char *s1, char *s2, size_t bytes)
 {
-        unsigned int i;
+	unsigned int i;
 
-        if (s1 == NULL || s2 == NULL)
-                return(-1);
+	if (s1 == NULL || s2 == NULL)
+		return (-1);
 
-        for (i = 0; s1[i] && s2[i] == s1[i] && i < bytes - 1; i++);
-        return (s2[i] - s1[i]);
+	for (i = 0; s1[i] && s2[i] == s1[i] && i < bytes - 1; i++)
+		;
+	return (s2[i] - s1[i]);
 }
 
 /**
@@ -25,10 +26,11 @@ int _strcmp(char *s1, char *s2, size_t bytes)
 int _strlen(const char *str)
 {
 
-        int i;
+	int i;
 
-        for (i = 0; str[i] != '\0'; i++);
-        return (i);
+	for (i = 0; str[i] != '\0'; i++)
+		;
+	return (i);
 }
 
 /**
@@ -44,7 +46,8 @@ char *_strncat(char *dest, char *src, int n)
 	int i, j;
 
 	i = 0;
-	for (j = 0; dest[j] != '\0'; j++);
+	for (j = 0; dest[j] != '\0'; j++)
+		;
 	while (src[i] != '\0' && i < n)
 	{
 		dest[j + i] = src[i];
