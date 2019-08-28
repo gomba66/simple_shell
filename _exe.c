@@ -7,7 +7,7 @@
  * @av: string that contain the name of the program.
  * Return: not return on success, otherwise return -1 if fail.
  */
-void _execv(char **token, int count, char **tokpath, char **av)
+void _execv(char **token, char **tokpath, char **av)
 {
 	pid_t pid_child = 0;
 	int j = 0, newcount = 0, x = 2;
