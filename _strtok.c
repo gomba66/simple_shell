@@ -9,7 +9,7 @@ char **_strtok(char *buffer)
 	char *token;
 	char **newArray;
 	int i = 0;
-	char *delim = " \n";
+	char *delim = " \"\n";
 	int sizebuf = 1024;
 
 	newArray = malloc(sizeof(char *) * sizebuf);
