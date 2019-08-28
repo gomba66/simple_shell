@@ -1,7 +1,9 @@
 #include "holberton.h"
 /**
  * main - Entry point
- * This is a Super Simple Shell
+ * @ac: argument counter
+ * @av: argument vectors
+ * @envp: enviroment
  * Return: 0 on success.
  */
 int main(int ac, char *av[], char *envp[])
@@ -23,7 +25,7 @@ int main(int ac, char *av[], char *envp[])
 	}
 	tokenpath = _tokpath(string);
 
-	while(1)
+	while (1)
 	{
 		count++;
 		a = _prompt();
