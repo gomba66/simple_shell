@@ -6,15 +6,14 @@
  * _execv - Function to execute a program
  * @token: string tokenized
  * @count: counter
- * @tokenpath: path tokenized
+ * @tokpath: path tokenized
  * Return: not return on success, otherwise return -1 if fail.
  */
-void _execv(char **token, int count, char **tokenpath)
+void _execv(char **token, int count, char **tokpath)
 {
-	pid_t pid_child;
-	int i = 0;
-
-
+	pid_t pid_child = 0;
+	int j = 0;
+	(void)count;
 	pid_child = fork();
 
 	if (pid_child < 0)
@@ -24,19 +23,28 @@ void _execv(char **token, int count, char **tokenpath)
 	}
 	if (!pid_child)
 	{
-
-		while (tokenpath[i] != NULL)
+		if (token[0][0] == '/')
 		{
-			printf("%s\n", tokenpath[i]);
-			i++;
+			if (execve(token[0], token, NULL) == -1)
+			{
+				perror(token[0]);
+				exit(1);
+			}
 		}
-
-		if (execv(token[0], token) == -1)
+		else
 		{
-			perror(token[0]);
-			exit(1);
+			while (access(tokpath[j], X_OK | F_OK) < 0 && tokpath[j])
+			{
+				j++;
+			}
+			if (execve(tokpath[j], token, NULL) == -1)
+			{
+				perror(token[0]);
+				exit(1);
+			}
 		}
 	}
 	else
-		wait(NULL);
+		wait(&pid_child);
+
 }
