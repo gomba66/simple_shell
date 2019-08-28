@@ -5,6 +5,8 @@
 /**
  * _execv - Function to execute a program
  * @token: string tokenized
+ * @count: counter
+ * @tokenpath: path tokenized
  * Return: not return on success, otherwise return -1 if fail.
  */
 void _execv(char **token, int count, char **tokenpath)
@@ -22,10 +24,10 @@ void _execv(char **token, int count, char **tokenpath)
 	}
 	if (!pid_child)
 	{
-		//printf("%s", string);
+
 		while (tokenpath[i] != NULL)
 		{
-			printf("%s\n",tokenpath[i]);
+			printf("%s\n", tokenpath[i]);
 			i++;
 		}
 
