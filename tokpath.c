@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * _tokpath - Function that tokenize the path
- * @path: string that contain the path
+ * @buffer: string that contain the path
  * Return: tokenpath
  *
  */
@@ -14,7 +14,7 @@ char **_tokpath(char *buffer)
 	char *delim = ":";
 	int sizebuf = 1024;
 
-	newArray = malloc(sizeof(char*) * sizebuf);
+	newArray = malloc(sizeof(char *) * sizebuf);
 
 	token = strtok(buffer, delim);
 	toktemp = token;
@@ -26,7 +26,7 @@ char **_tokpath(char *buffer)
 	}
 	newArray[i] = NULL;
 	i = 0;
-	while(newArray[0][i] != '\0')
+	while (newArray[0][i] != '\0')
 	{
 		newArray[0][i] = toktemp[j];
 		i++;
