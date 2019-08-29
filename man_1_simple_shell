@@ -1,4 +1,4 @@
-.TH SIMPLE_SHELL "AGO 29" UNIX "User Manual"
+.TH SIMPLE_SHELL 1 "AGO 29" UNIX "User Manual"
 .SH NAME
 minishell \- Unix command interpreter
 .SH HEADERS
