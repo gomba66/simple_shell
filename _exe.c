@@ -3,7 +3,7 @@
  * _execv - Function to execute a program
  * @token: string tokenized
  * @tokpath: path tokenized
- * @av: string that contain the name of the program.
+ * @envp: enviroment.
  * Return: not return on success, otherwise return -1 if fail.
  */
 void _execv(char **token, char **tokpath, char **envp)
