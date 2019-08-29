@@ -45,7 +45,7 @@ int main(int ac, char *av[], char *envp[])
 		{
 			b = _strtok(a);
 			c = _concat(a, tokenpath);
-			_execv(b, c);
+			_execv(b, c, envp);
 		}
 
 	}
