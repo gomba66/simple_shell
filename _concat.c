@@ -25,7 +25,7 @@ char **_concat(char *command, char **path)
 		p = 0;
 
 		lenpath = _strlen(path[i]);
-		patconcat[i] = malloc(sizeof(char) * (lencom + lenpath + 1));
+		patconcat[i] = malloc(sizeof(char) * (lencom + lenpath));
 		for (j = 0; j <= (lencom + lenpath); j++)
 		{
 			if (j < lenpath)
