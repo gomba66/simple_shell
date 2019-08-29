@@ -6,7 +6,7 @@
  * @av: string that contain the name of the program.
  * Return: not return on success, otherwise return -1 if fail.
  */
-void _execv(char **token, char **tokpath)
+void _execv(char **token, char **tokpath, char **envp)
 {
 	pid_t pid_child = 0;
 	int j = 0;
@@ -21,7 +21,7 @@ void _execv(char **token, char **tokpath)
 	{
 		if (token[0][0] == '/')
 		{
-			if (execve(token[0], token, tokpath) == -1)
+			if (execve(token[0], token, envp) == -1)
 			{
 				perror(token[0]);
 				exit(1);
@@ -31,7 +31,7 @@ void _execv(char **token, char **tokpath)
 		{
 			while (access(tokpath[j], X_OK | F_OK) < 0 && tokpath[j])
 				j++;
-			if (execve(tokpath[j], token, tokpath) == -1)
+			if (execve(tokpath[j], token, envp) == -1)
 				perror(token[0]);
 			exit(1);
 		}
