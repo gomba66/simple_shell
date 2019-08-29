@@ -26,6 +26,7 @@ int main(int ac, char *av[], char *envp[])
 	char **tokenpath = NULL;
 	char **c = NULL;
 	(void)ac;
+	(void)av;
 
 
 	signal(SIGINT, salto);
@@ -44,7 +45,7 @@ int main(int ac, char *av[], char *envp[])
 		{
 			b = _strtok(a);
 			c = _concat(a, tokenpath);
-			_execv(b, c, av);
+			_execv(b, c);
 		}
 
 	}
