@@ -42,7 +42,7 @@ char **_concat(char *command, char **path)
 					p++;
 			}
 		}
-	};
+	}
 
 	patconcat[i] = NULL;
 
