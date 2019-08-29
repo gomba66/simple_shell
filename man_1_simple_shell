@@ -1,0 +1,43 @@
+.TH SIMPLE_SHELL "AGO 29" UNIX "User Manual"
+.SH NAME
+minishell \- Unix command interpreter
+.SH HEADERS
+.B #include """holberton.h"""
+
+.SH DESCRIPTION
+.B minishell
+A Unix Shell, or also a shell, is the term used in computer science
+to refer to a command interpreter, which consists of the traditional
+user interface of Unix-based operating systems and the like, such as
+GNU / Linux.
+
+.SH    Overview
+The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.It  is  the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command).The shell implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage,along with built in history and line editing capabilities.
+It incorporates many features to aid interactive use and has the advantage that the interpretative language is common to both interactive and non-interactive use (shell scripts).That is,commands can be typed directly to the running shell or can be put into a file and the file can be executed directly by the shell.
+
+.SH USAGE - EXAMPLE
+./simpleshell
+.PP
+$ {command} (HIT ENTER)
+
+.SH Builtins
+This section lists the builtin commands which are builtin because they need to perform some operation that can't be performed by a separate process. Some examples of buildings are:
+.I exit
+.I env
+.PP
+.SH OPTIONS
+
+.LP
+
+.LP	Examples:
+	$ /bin/ls
+	$ /bin/pwd
+	$ ls
+	$ pwd
+	
+.SH AUTHORS
+Daniel Ramirez <936@holbertonschool.com> 
+.PP
+Jose Marulanda <967@holbertonschool.com>
+.SH "SEE ALSO"
+.BR sh (1)
