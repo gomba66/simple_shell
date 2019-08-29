@@ -2,7 +2,6 @@
 /**
  * _execv - Function to execute a program
  * @token: string tokenized
- * @count: counter
  * @tokpath: path tokenized
  * @av: string that contain the name of the program.
  * Return: not return on success, otherwise return -1 if fail.
