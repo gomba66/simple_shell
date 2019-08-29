@@ -17,7 +17,6 @@ char *_prompt(char **envp)
 	count = getline(&b, &bufsize, stdin);
 	if (count == -1)
 	{
-		perror("Error al intentar recibir el string");
 		exit(1);
 	}
 	if (count == 1 || b[0] == ' ')
