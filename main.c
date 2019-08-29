@@ -24,7 +24,6 @@ int main(int ac, char *av[], char *envp[])
 	char **b = NULL;
 	char *string = NULL;
 	char **tokenpath = NULL;
-	int  count = 0;
 	char **c = NULL;
 	(void)ac;
 
@@ -40,7 +39,6 @@ int main(int ac, char *av[], char *envp[])
 
 	while (1)
 	{
-		count++;
 		a = _prompt(envp);
 		if (a != NULL)
 		{
