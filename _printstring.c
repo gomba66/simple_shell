@@ -1,10 +1,17 @@
 #include "holberton.h"
 /**
- * _printchar - print something
- * @c: characters to print
- * Return: Nothing
+ * _printstring - Function that modify the string color
+ * @color: String.
+ * Return: Nothing.
  */
-void _printchar(char c)
+void _printstring(char *text)
 {
-	write(STDOUT_FILENO, &c, 1);
+	int i = 0;
+
+	while (text[i] != '\0')
+	{
+		_printchar(text[i]);
+		i++;
+	}
+
 }
