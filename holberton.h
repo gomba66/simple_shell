@@ -13,7 +13,7 @@ char *_prompt(char **envp);
 void _printchar(char c);
 void _printstring(char *color);
 char **_strtok(char *buffer);
-void _execv(char **token, char **envp, char **av);
+void _execv(char **token, char **envp);
 char *_strncat(char *dest, char *src, int n);
 int _strlen(const char *str);
 int _strcmp(char *s1, char *s2, size_t bytes);
