@@ -19,7 +19,7 @@ char *_prompt(char **envp)
 	{
 		exit(1);
 	}
-	if (count == 1 || b[0] == ' ')
+	if (count == 1 || (b[0] == ' ' && b[1] == '\n'))
 	{
 		b = NULL;
 		return (b);
