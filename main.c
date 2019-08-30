@@ -8,7 +8,7 @@ void salto(int x);
 void salto(int x)
 {
 	(void)x;
-	_printstring("\x1B[32m\n$ \x1B[0m");
+	_printstring("\n$ ");
 }
 
 /**
