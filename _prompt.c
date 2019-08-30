@@ -11,9 +11,8 @@ char *_prompt(char **envp)
 	ssize_t count = 0;
 	int i = 0;
 
-	_printstring("\x1B[32m");
 	_printstring("$ ");
-	_printstring("\x1B[0m");
+
 	count = getline(&b, &bufsize, stdin);
 	if (count == -1)
 	{
